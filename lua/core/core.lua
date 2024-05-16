@@ -31,4 +31,4 @@ vim.opt.list = true
 vim.opt.path = vim.opt.path + "**"
 vim.opt.wildmenu = true
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.smartcase = false
