@@ -5,4 +5,9 @@
 -- | |\  | |__| |_| |\ V /  | || |  | |
 -- |_| \_|_____\___/  \_/  |___|_|  |_|
 --==============================================================================="
-vim.cmd('runtime! config/core/*.lua')
+
+-- Load core modules
+vim.cmd('runtime! lua/core/*.lua')
+
+-- Set up package manager
+vim.cmd('runtim! lua/lazy.lua')
