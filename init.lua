@@ -10,4 +10,4 @@
 vim.cmd('runtime! lua/core/*.lua')
 
 -- Set up package manager
-vim.cmd('runtim! lua/lazy.lua')
+require('pacman')
