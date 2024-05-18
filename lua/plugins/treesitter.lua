@@ -26,7 +26,7 @@ function tree.config()
     "markdown", "yaml", "zathurarc"}, -- Misc.
 
     sync_install = true,
-    auto_install = true,
+    auto_install = true, -- Automatically install languages that is not in the list
 
     highlight = { enable = true, },
     indent = {enable = true },

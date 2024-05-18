@@ -1,9 +1,6 @@
 -- Turn on terminal gui colors
 vim.opt.termguicolors = true
 
--- Higlight current line
-vim.opt.cursorline = true
-
 -- Highlight paired braces
 vim.opt.showmatch = true
 
