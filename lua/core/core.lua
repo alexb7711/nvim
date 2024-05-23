@@ -1,9 +1,6 @@
 -- Turn on terminal gui colors
 vim.opt.termguicolors = true
 
--- Vertical Bar
-vim.opt.colorcolumn = "81"
-
 -- Enable mouse support
 vim.opt.mouse = "a"
 
