@@ -27,9 +27,11 @@ local text_lang = {
 }
 
 -- All languages
-local languages = {
-  prog_lang, text_lang
-}
+local languages = prog_lang
+
+for _, t in ipairs(text_lang) do
+	table.insert(languages, t)
+end
 
 --------------------------------------------------------------------------------
 --Tabs instead of spaces
