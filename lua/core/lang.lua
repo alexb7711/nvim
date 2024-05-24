@@ -30,7 +30,7 @@ local text_lang = {
 local languages = prog_lang
 
 for _, t in ipairs(text_lang) do
-	table.insert(languages, t)
+  table.insert(languages, t)
 end
 
 --------------------------------------------------------------------------------
@@ -46,22 +46,12 @@ vim.opt.expandtab = true
 --------------------------------------------------------------------------------
 vim.opt.textwidth = 80
 
--- Formatting for programming languages
 vim.api.nvim_create_autocmd({ "BufEnter", "BufCreate" }, {
-  pattern = prog_lang,
-  callback = function()
-    vim.opt.formatoptions = "acnj"
-  end
-})
-
--- Formatting for markup/writing languages
-vim.api.nvim_create_autocmd({ "BufEnter", "BufCreate" }, {
-  pattern = text_lang,
+  pattern = languages,
   callback = function()
     vim.opt.formatoptions = "cnj"
   end
 })
-
 
 --------------------------------------------------------------------------------
 --Display whitespace
