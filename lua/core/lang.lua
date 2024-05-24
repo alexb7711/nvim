@@ -7,23 +7,24 @@
 
 -- Programming languages
 local prog_lang = {
-  "*.cpp",
-  "*.hpp",
   "*.c",
+  "*.cpp",
   "*.h",
-  "*.rs",
-  "*.sh",
-  "*.py",
+  "*.hpp",
   "*.lua",
   "*.m",
-  "makefile",
   "*.mk",
+  "*.py",
+  "*.rs",
+  "*.sh",
+  "*.toml",
+  "makefile",
 }
 
 -- Markup/Writing Languages
 local text_lang = {
-  "*.txt",
   "*.md",
+  "*.txt",
 }
 
 -- All languages
