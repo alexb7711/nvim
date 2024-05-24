@@ -1,6 +1,6 @@
 --- Everforest
 --
--- https://github.com/sainnhe/everforest
+-- https://github.com/neanias/everforest-nvim
 --
 --
 
@@ -8,8 +8,9 @@
 -- LAZY SETUP
 ---------------------------------------------------------------------------------
 local ever = {
-  "sainnhe/everforest",
-  name = "everforest",
+  "neanias/everforest-nvim",
+  version = false,
+  lazy = false,
   priority = 1000,
 }
 
@@ -17,7 +18,14 @@ local ever = {
 -- CONFIGURATION
 ---------------------------------------------------------------------------------
 function ever.config()
-  vim.g.everforest_enable_italic = true
+  require("everforest").setup({
+    background = "hard",
+    transparent_background_level = 1,
+    enable_italic = true,
+    spell_foreground = true,
+  })
+
+  vim.o.background = 'dark'
   vim.cmd.colorscheme('everforest')
 end
 
