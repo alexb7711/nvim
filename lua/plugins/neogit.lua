@@ -6,20 +6,11 @@
 ---------------------------------------------------------------------------------
 -- LAZY SETUP
 ---------------------------------------------------------------------------------
-local neogit = {
+return {
   "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-    }
+  dependencies = {
+    "nvim-lua/plenary.nvim",  -- required
+    "sindrets/diffview.nvim", -- optional - Diff integration
+  },
+  config = true,
 }
-
----------------------------------------------------------------------------------
--- CONFIGURATION
----------------------------------------------------------------------------------
-function neogit.config()
-  -- Keymap
-  vim.keymap.set('n', '<leader>b', ':neogit filesystem toggle right<CR>')
-end
-
-return neogit
