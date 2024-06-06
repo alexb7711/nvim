@@ -22,6 +22,7 @@ ProgLang = {
 -- Markup/Writing Languages
 TextLang = {
   "*.md",
+  "*.tex",
   "*.txt",
 }
 
