@@ -9,6 +9,9 @@ vim.g.maplocalleader = " "
 -- Turn off search highlighting
 vim.keymap.set("n", "<esc>", ":noh<CR>")
 
+-- Open current pdf in zathura
+vim.keymap.set("n", "<space>z", ":!zathura %:r.pdf&<CR><CR>")
+
 --==============================================================================
 -- Terminal
 --==============================================================================

@@ -16,20 +16,32 @@ local tree = {
 -- CONFIGURATION
 ---------------------------------------------------------------------------------
 function tree.config()
-  local tree = require('nvim-treesitter.configs')
+  local t = require("nvim-treesitter.configs")
 
-  tree.setup ({
-    ensure_installed =
-    {"c", "cpp", "rust",  -- Compiled languages
-    "lua", "vim", "bash", "python", "matlab",  -- Scripting Languages
-    "make", "cmake",  -- Build tools
-    "markdown", "yaml", "zathurarc"}, -- Misc.
+  t.setup({
+    ensure_installed = {
+      "c",
+      "cpp",
+      "rust",
+      "lua",
+      "vim",
+      "bash",
+      "python",
+      "matlab",
+      "make",
+      "cmake",
+      "markdown",
+      "yaml",
+      "zathurarc",
+    },
+
+    ignore_install = { "latex" },
 
     sync_install = true,
     auto_install = true, -- Automatically install languages that is not in the list
 
-    highlight = { enable = true, },
-    indent = {enable = true },
+    highlight = { enable = true },
+    indent = { enable = true },
   })
 end
 
