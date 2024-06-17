@@ -12,6 +12,10 @@ vim.keymap.set("n", "<esc>", ":noh<CR>")
 -- Open current pdf in zathura
 vim.keymap.set("n", "<space>z", ":!zathura %:r.pdf&<CR><CR>")
 
+-- Move lines up and down
+vim.keymap.set("n", "<A-Up>", "ddkkp")
+vim.keymap.set("n", "<A-Down>", "ddp")
+
 --==============================================================================
 -- Terminal
 --==============================================================================
