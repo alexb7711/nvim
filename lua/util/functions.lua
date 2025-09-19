@@ -12,3 +12,13 @@ function lhas (list, item)
   end
   return false
 end
+
+-- =============================================================================
+-- This function trims whitespace from end of lines
+--
+function whitespace_trim()
+   local save_cursor = vim.fn.getpos(".")
+   vim.cmd([[keeppatterns %substitute/\v\s+$//eg]])
+   vim.fn.setpos(".", save_cursor)
+end
+

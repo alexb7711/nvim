@@ -1,3 +1,5 @@
+require("util.buf_types")
+
 -- =============================================================================
 -- Commands
 -- =============================================================================
@@ -22,14 +24,64 @@ vim.api.nvim_create_autocmd("BufLeave", {
 -- -----------------------------------------------------------------------------
 local cursor_line_augroup = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 vim.api.nvim_create_autocmd({"InsertLeave", "WinEnter"}, {
-   group = cursor_line_augroup
+   group = cursor_line_augroup,
    pattern = {"*"},
-   vim.opt_local.cursorline = true
+   callback = function()
+      vim.opt_local.cursorline = true
+   end
 })
 vim.api.nvim_create_autocmd({"InsertEnter", "WinLeave"}, {
-   group = cursor_line_augroup
+   group = cursor_line_augroup,
    pattern = {"*"},
-   vim.opt_local.cursorline = false
+   callback = function()
+      vim.opt_local.cursorline = false
+   end
+})
+
+-- -----------------------------------------------------------------------------
+-- Disable Word Wrap
+-- -----------------------------------------------------------------------------
+vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave"}, {
+   pattern = ProgBuf,
+   callback = function()
+      vim.opt_local.wrap = false
+   end
+})
+
+-- -----------------------------------------------------------------------------
+-- Line Numbers
+-- -----------------------------------------------------------------------------
+vim.api.nvim_create_autocmd({"InsertLeave", "BufEnter"}, {
+   pattern = ProgBuf,
+   callback = function()
+      vim.opt_local.number = true
+      vim.opt_local.relativenumber = true
+   end
+})
+vim.api.nvim_create_autocmd({"InsertEnter"}, {
+   pattern = ProgBuf,
+   callback = function()
+      vim.opt_local.number = true
+      vim.opt_local.relativenumber = false
+   end
+})
+
+-- -----------------------------------------------------------------------------
+-- Disable for terminal mode
+-- -----------------------------------------------------------------------------
+vim.api.nvim_create_autocmd ("TermOpen", {
+   pattern = {"*"},
+   callback = function() 
+      vim.opt_local.number = true
+      vim.opt_local.relativenumber = false
+   end
+})
+vim.api.nvim_create_autocmd ({"BufEnter", "BufLeave", "FocusGained", "FocusLost"}, {
+   pattern = {"term://*,*.pdf"},
+   callback = function() 
+      vim.opt_local.number = false
+      vim.opt_local.relativenumber = false
+   end
 })
 
 -- -----------------------------------------------------------------------------

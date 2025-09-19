@@ -12,6 +12,6 @@ vim.cmd('syntax enable')
 vim.cmd('colorscheme default')
 
 -- set background=dark
--- hi Normal guibg=NONE ctermbg=NONE
--- hi EndOfBuffer guibg=NONE ctermbg=NONE
--- hi Terminal guibg=NONE ctermbg=NONE
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+-- vim.cmd(hi EndOfBuffer guibg=NONE ctermbg=NONE)
+-- vim.cmd(hi Terminal guibg=NONE ctermbg=NONE)
