@@ -29,12 +29,18 @@ ProFileType = {
    -- Configuration and Serialization
    'toml', 'yaml', 'json',
    -- Interpreted Languages
-   'vim', 
-   'java', 
-   'python',
+   'vim', 'lua',
+   'java', 'python',
+   
    -- HTML
    'css','html','javascript','xml'
 }
+
+-- =============================================================================
+-- PlantUML
+-- =============================================================================
+UmlBuf = {"*.pml"}
+UmlFileType = {'promela'}
 
 -- =============================================================================
 -- Markup/Writing Languages
@@ -47,6 +53,6 @@ DocBuf = {
 
 DocFileType= {
    'markdown',
-   'promela', 
    'tex'
 }
+

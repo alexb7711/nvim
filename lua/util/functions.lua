@@ -20,5 +20,6 @@ function whitespace_trim()
    local save_cursor = vim.fn.getpos(".")
    vim.cmd([[keeppatterns %substitute/\v\s+$//eg]])
    vim.fn.setpos(".", save_cursor)
+   vim.cmd('write')
 end
 
