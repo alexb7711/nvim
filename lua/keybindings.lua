@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd ({"BufEnter", "FocusGained", "InsertLeave"}, {
    group = spell_augroup,
    pattern = UmlBuf,
    callback = function()
-      vim.keymap.set('n', '<leader><leader>', ":vsplit<CR>:e %:r.utxt<CR>", 
+      vim.keymap.set('n', '<leader><leader>', ":vsplit<CR>:e %:r.utxt<CR>",
       {noremap = true, silent = true})
    end
 })
@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd ({"FileType"}, {
    group = search_augroup,
    pattern = ProgFileType,
    callback = function()
-      vim.keymap.set('n', '<leader>fw', 'yiw:silent<space>grep!<space>-Ri<space>"<C-r>0"<space>.<CR>:botright copen<CR><C-l>',
+      vim.keymap.set('n', '<leader>fw', 'yiw:silent<space>grep!<space>-i<space>"<C-r>0"<space>.<CR>:botright copen<CR><C-l>',
       {noremap = true, silent = true})
    end
 })
@@ -57,8 +57,8 @@ vim.api.nvim_create_autocmd ({"FileType"}, {
    group = search_augroup,
    pattern = ProgFileType,
    callback = function()
-      vim.keymap.set('n', '<leader>fs', 'grep!<space>-Ri<space>""<space>.<left><left><left>',
-      {noremap = true, silent = true})
+      vim.keymap.set('n', '<leader>fs', ':grep!<space>-i<space>""<space>.<left><left><left>',
+      {noremap = true})
    end
 })
 vim.api.nvim_create_autocmd ({"FileType"}, {
@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
    pattern = { "*.pdf" },
    callback = function()
       vim.keymap.set('n', '<leader><leader>',
-      function() 
+      function()
          vim.fn.system(vim.fn.getenv("PDF_READER") .. " '" .. vim.fn.expand("%:r") .. ".pdf'")
       end,
       {silent = false})

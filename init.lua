@@ -9,9 +9,11 @@
 -- ============================================================================
 for _, module in ipairs {
     "core",
-    "commands",
     "theme",
+    "commands",
     "keybindings",
+    "pacman",
+    "lsp",
 } do
     local ok, fault = pcall(require, module)
     if not ok then vim.api.nvim_err_writeln("Failed to load " .. module .. "\n\n" .. fault) end

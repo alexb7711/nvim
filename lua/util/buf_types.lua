@@ -19,7 +19,7 @@ ProgBuf = {
   'CmakeLists.txt',
 }
 
-ProFileType = {
+ProgFileType = {
    -- C/C++
    'c', 'cpp',
    -- Build tools
@@ -56,3 +56,7 @@ DocFileType= {
    'tex'
 }
 
+-- =============================================================================
+-- Combined
+-- =============================================================================
+AllFileType = vim.tbl_extend("keep", ProgFileType, DocFileType)

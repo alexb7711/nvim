@@ -121,6 +121,9 @@ vim.opt.list = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Round floating windows
+vim.opt.winborder = 'double'
+
 ------------------------------------------------------------------------------
 -- => Files, backups and undo
 -- ------------------------------------------------------------------------------
@@ -129,6 +132,9 @@ vim.opt.splitright = true
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
+
+-- Save undo history
+vim.opt.undofile = true
 
 -- ------------------------------------------------------------------------------
 -- => Text, tab and indent related
@@ -165,11 +171,7 @@ vim.opt.shortmess = "filnxtToOFc"
 -- vim.opt.complete.remove('i')
 
 --" Set completeopt to have a better completion experience
-if lhas(vim.opt.completeopt, "fuzzy") then
-  vim.opt.completeopt= {'fuzzy', 'menuone', 'noselect', 'preview'}
-else
-  vim.opt.completeopt= {'menuone', 'noselect', 'preview'}
-end
+vim.opt.completeopt= {'fuzzy', 'menu', 'menuone', 'noinsert', 'popup'}
 
 -- Suffixes (gf)
 vim.opt.suffixesadd = {'.c', '.cpp', '.h', '.hpp', '.m', '.markdown', '.md', '.py'}
