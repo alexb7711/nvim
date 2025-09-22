@@ -8,13 +8,14 @@
 -- CONFIGURATION
 -- ============================================================================
 for _, module in ipairs {
-    "core",
-    "theme",
-    "commands",
-    "keybindings",
-    "pacman",
-    "lsp",
+   "core",
+   "theme",
+   "statusline",
+   "commands",
+   "keybindings",
+   "pacman",
+   "lsp",
 } do
-    local ok, fault = pcall(require, module)
-    if not ok then vim.api.nvim_err_writeln("Failed to load " .. module .. "\n\n" .. fault) end
+   local ok, fault = pcall(require, module)
+   if not ok then vim.api.nvim_err_writeln("Failed to load " .. module .. "\n\n" .. fault) end
 end
