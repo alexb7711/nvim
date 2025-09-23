@@ -10,7 +10,6 @@
 for _, module in ipairs {
    "core",
    "theme",
-   "statusline",
    "commands",
    "keybindings",
    "pacman",

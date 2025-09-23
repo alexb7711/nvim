@@ -22,7 +22,7 @@ end
 -- ==============================================================================
 
 -- Text wrapping
-vim.opt_local.wrap = true
+vim.opt_local.wrap = false
 
 -- Indentation
 vim.opt_local.smartindent = false
