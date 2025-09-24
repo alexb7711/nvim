@@ -25,7 +25,7 @@ end
 -- =============================================================================
 
 -- Text wrapping
-vim.opt_local.wrap = true
+vim.opt_local.wrap = false
 
 -- Set vertical column
 vim.opt_local.colorcolumn = "90"
