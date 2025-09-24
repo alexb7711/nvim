@@ -8,7 +8,7 @@
 --
 function lhas (list, item)
   for _, value in ipairs(list) do
-    if value == target_item then return true end
+    if value == item then return true end
   end
   return false
 end

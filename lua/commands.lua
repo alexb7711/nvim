@@ -1,4 +1,5 @@
 require("util.buf_types")
+require("util.functions")
 
 -- =============================================================================
 -- Commands
@@ -56,18 +57,23 @@ vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave"}, {
 -- -----------------------------------------------------------------------------
 -- Line Numbers
 -- -----------------------------------------------------------------------------
-vim.api.nvim_create_autocmd({"UIEnter", "InsertLeave", "FileType"}, {
-   pattern = ProgFileType,
+vim.api.nvim_create_autocmd({"UIEnter", "InsertLeave"}, {
+   pattern = {'*'},
    callback = function()
-      vim.opt_local.number = true
-      vim.opt_local.relativenumber = true
+      if lhas(ProgFileType, vim.bo.filetype) then
+         vim.opt_local.number = true
+         vim.opt_local.relativenumber = true
+      end
    end
 })
-vim.api.nvim_create_autocmd({"InsertEnter", "Filetype"}, {
-   pattern = ProgFileType,
+vim.api.nvim_create_autocmd({"InsertEnter"}, {
+   pattern = {'*'},
    callback = function()
-      vim.opt_local.number = true
-      vim.opt_local.relativenumber = false
+      print(vim.bo.filetype)
+      if lhas(ProgFileType, vim.bo.filetype) then
+         vim.opt_local.number = true
+         vim.opt_local.relativenumber = false
+      end
    end
 })
 

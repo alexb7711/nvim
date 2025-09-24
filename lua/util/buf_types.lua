@@ -23,7 +23,7 @@ ProgFileType = {
    -- C/C++
    'c', 'cpp',
    -- Build tools
-   'cmake','make',
+   'cmake', 'make',
    -- Rust
    'rust',
    -- Configuration and Serialization
