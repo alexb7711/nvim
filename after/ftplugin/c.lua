@@ -23,6 +23,7 @@ end
 
 -- Text wrapping
 vim.opt_local.wrap = false
+vim.opt_local.textwidth = 80
 
 -- Indentation
 vim.opt_local.smartindent = false
@@ -38,9 +39,6 @@ vim.opt_local.shiftwidth = 3
 
 -- Code folding
 vim.opt_local.foldmethod = "indent"
-
--- Formatting
-vim.opt_local.formatprg = "clang-format"
 
 -- =============================================================================
 -- Commands
